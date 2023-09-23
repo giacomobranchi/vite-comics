@@ -14,7 +14,7 @@ export default {
 <template>
   <div class="container">
     <nav class="navbar navbar-expand py-4">
-      <div class="d-flex justify-content-between w-100">
+      <div class="d-flex justify-content-between align-items-center w-100">
         <img :src="logo" alt="">
         <div class="nav navbar-nav justify-content-between align-items-center">
           <a v-for="link in navLinks" class="nav-item nav-link border_nav" href="#" aria-current="page">{{ link }}</a>
@@ -34,7 +34,7 @@ img {
   height: 100%;
 
   &:hover {
-    border-bottom: 5px solid blue;
+    border-bottom: 5px solid #0282f9;
   }
 }
 </style>
