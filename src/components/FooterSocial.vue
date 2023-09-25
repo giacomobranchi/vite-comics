@@ -7,6 +7,7 @@ import periscope from '../assets/img/footer-periscope.png'
 export default {
   data() {
     return {
+      name: 'FooterSocial',
       facebook,
       twitter,
       youTube,

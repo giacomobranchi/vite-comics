@@ -3,6 +3,7 @@ import logo from '../assets/img/dc-logo.png'
 export default {
   data() {
     return {
+      name: 'NavBar',
       logo,
       navLinks: ['CHARACTERS', 'COMICS', 'MOVIES', 'TV', 'GAMES', 'COLLECTIBLES', 'VIDEOS', 'FANS', 'NEWS', 'SHOP']
     }
