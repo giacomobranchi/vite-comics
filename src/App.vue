@@ -8,9 +8,7 @@ export default {
     AppFooter,
     AppMain
   },
-  data() {
 
-  }
 }
 </script>
 

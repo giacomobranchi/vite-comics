@@ -1,37 +1,33 @@
 <script>
-import DigitalComics from '../assets/img/buy-comics-digital-comics.png'
-import Merchandise from '../assets/img/buy-comics-merchandise.png'
-import Subscriptions from '../assets/img/buy-comics-subscriptions.png'
-import ShopLocator from '../assets/img/buy-comics-shop-locator.png'
-import PowerVisa from '../assets/img/buy-dc-power-visa.svg'
+
 export default {
 
   data() {
     return {
       name: 'FooterNav',
-      DigitalComics,
-      Merchandise,
-      Subscriptions,
-      ShopLocator,
-      PowerVisa,
       footerNavLinks: [{
-        img: DigitalComics, text: 'DIGITAL COMICS'
+        img: '../assets/img/buy-comics-digital-comics.png', text: 'DIGITAL COMICS'
       },
       {
-        img: Merchandise, text: 'DC MERCHANDISE'
+        img: '../assets/img/buy-comics-merchandise.png', text: 'DC MERCHANDISE'
       },
       {
-        img: Subscriptions, text: 'SUBSCRIPTIONS'
+        img: '../assets/img/buy-comics-subscriptions.png', text: 'SUBSCRIPTIONS'
       },
       {
-        img: ShopLocator, text: 'COMIC SHOP LOCATOR'
+        img: '../assets/img/buy-comics-shop-locator.png', text: 'COMIC SHOP LOCATOR'
       },
       {
-        img: PowerVisa, text: 'DC POWER VISA'
+        img: '../assets/img/buy-dc-power-visa.svg', text: 'DC POWER VISA'
       },]
 
     }
 
+  },
+  methods: {
+    getImageUrl(name) {
+      return new URL(`${name}`, import.meta.url).href
+    }
   }
 }
 </script>
@@ -41,7 +37,7 @@ export default {
     <div class="container">
       <div class="row">
         <div v-for="link in footerNavLinks" class="col">
-          <img :src="link.img" alt="">
+          <img :src="getImageUrl(link.img)" alt="">
           <span class="p-2">{{ link.text }}</span>
         </div>
       </div>

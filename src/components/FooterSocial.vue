@@ -1,21 +1,31 @@
 <script>
-import facebook from '../assets/img/footer-facebook.png'
-import twitter from '../assets/img/footer-twitter.png'
-import youTube from '../assets/img/footer-youtube.png'
-import pinterest from '../assets/img/footer-pinterest.png'
-import periscope from '../assets/img/footer-periscope.png'
+
 export default {
   data() {
     return {
       name: 'FooterSocial',
-      facebook,
-      twitter,
-      youTube,
-      pinterest,
-      periscope,
-      footerSocialLinks: [facebook, twitter, youTube, pinterest, periscope]
+      footerSocialLinks: [{
+        name: 'facebook', icon: '../assets/img/footer-facebook.png'
+      }, {
+        name: 'twitter', icon: '../assets/img/footer-twitter.png'
+      },
+      {
+        name: 'youTube', icon: '../assets/img/footer-youtube.png'
+      },
+      {
+        name: 'pinterest', icon: '../assets/img/footer-pinterest.png'
+      },
+      {
+        name: 'periscope', icon: '../assets/img/footer-periscope.png'
+      },
+      ]
     }
 
+  },
+  methods: {
+    getImageUrl(name) {
+      return new URL(`${name}`, import.meta.url).href
+    }
   }
 }
 </script>
@@ -30,7 +40,7 @@ export default {
         <div class="col-4">
           <div>
             <h5 class="d-inline px-4">FOLLOW US</h5>
-            <img class="px-1 py-5" v-for="link in footerSocialLinks" :src="link">
+            <img class="px-1 py-5" v-for="link in footerSocialLinks" :src="getImageUrl(link.icon)">
           </div>
         </div>
       </div>

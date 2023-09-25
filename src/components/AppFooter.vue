@@ -1,6 +1,6 @@
 <script>
 import FooterNav from './FooterNav.vue'
-import FooterSocial from './FooterSocial.vue';
+import FooterSocial from './FooterSocial.vue'
 export default {
   components: {
     FooterNav,
