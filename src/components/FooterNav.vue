@@ -35,10 +35,12 @@ export default {
 <template>
   <div class="band p-5">
     <div class="container">
-      <div class="row">
-        <div v-for="link in footerNavLinks" class="col">
-          <img :src="getImageUrl(link.img)" alt="">
-          <span class="p-2">{{ link.text }}</span>
+      <div class="row align-items-center">
+        <div v-for="link in footerNavLinks" class="col d-flex align-items-center">
+          <div class="img_container" :style="{ 'background-image': 'url(' + getImageUrl(link.img) + ')' }">
+            <!-- <img :src="getImageUrl(link.img)" alt=""> -->
+          </div>
+          <div class="p-2 small">{{ link.text }}</div>
         </div>
       </div>
     </div>
@@ -50,8 +52,15 @@ export default {
   background-color: #0282f9;
   color: white;
 
-  & img {
+  & .img_container {
+    display: inline-block;
     height: 60px;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
+
+
 }
 </style>
